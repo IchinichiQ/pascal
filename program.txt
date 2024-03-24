@@ -1,0 +1,24 @@
+Program pr1;
+var
+i : integer;
+arr: array [1 .. 100] of integer;
+
+function Mult10(a: integer):integer;
+var y: integer;
+begin
+a:=a*10;
+end;
+
+BEGIN
+i:=0;
+while (i<5) do
+begin
+    arr[1]:=i;
+    Write(arr[1]);
+    i:=i+1;
+end;
+
+i:=Mult10(4);
+WriteLn(i);
+
+END.

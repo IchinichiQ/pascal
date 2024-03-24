@@ -1,0 +1,62 @@
+Program
+├ pr1
+├ var
+│ ├ var_dec
+│ │ ├ idents
+│ │ │ └ i
+│ │ └ integer
+│ ├ arr_decl
+│ │ ├ integer
+│ │ ├ idents
+│ │ │ └ arr
+│ │ ├ 1 (int)
+│ │ └ 100 (int)
+│ └ function
+│   ├ Mult10
+│   ├ params
+│   │ └ var_dec
+│   │   ├ idents
+│   │   │ └ a
+│   │   └ integer
+│   ├ integer
+│   ├ var
+│   │ └ var_dec
+│   │   ├ idents
+│   │   │ └ y
+│   │   └ integer
+│   └ Body
+│     └ ...
+│       └ :=
+│         ├ a
+│         └ *
+│           ├ a
+│           └ 10 (int)
+└ Body
+  └ ...
+    ├ :=
+    │ ├ i
+    │ └ 0 (int)
+    ├ while
+    │ ├ <
+    │ │ ├ i
+    │ │ └ 5 (int)
+    │ └ ...
+    │   ├ :=
+    │   │ ├ arr [1 (int)]
+    │   │ └ i
+    │   ├ call
+    │   │ ├ Write
+    │   │ └ arr [1 (int)]
+    │   └ :=
+    │     ├ i
+    │     └ +
+    │       ├ i
+    │       └ 1 (int)
+    ├ :=
+    │ ├ i
+    │ └ call
+    │   ├ Mult10
+    │   └ 4 (int)
+    └ call
+      ├ WriteLn
+      └ i
