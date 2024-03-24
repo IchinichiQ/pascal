@@ -71,8 +71,6 @@ class Grammar:
         expr << (logical_or)
 
 
-        #simple_assign = ((ident | array_ident) + ASSIGN.suppress() + expr).setName('assign')
-        # type_arr = ARRAY + LBRACK + num + pp.Literal("..").suppress() + num + RBRACK + OF + type_spec
         ident_list = ident + pp.ZeroOrMore(COMMA + ident)
         var_decl = ident_list + COLON + type_spec
         array_decl = ident_list + COLON + ARRAY + LBRACK + literal + pp.Literal(
@@ -105,8 +103,6 @@ class Grammar:
         stmt_list << (pp.ZeroOrMore(stmt + pp.ZeroOrMore(SEMI)))
 
         body = LBRACE + stmt_list + RBRACE
-        #params = pp.ZeroOrMore(ident + pp.ZeroOrMore(COMMA + ident) + COLON + type_spec + SEMI) + \
-        #(ident + pp.ZeroOrMore(COMMA + ident) + COLON + type_spec)
         params = LPAR + pp.ZeroOrMore(var_decl) + pp.ZeroOrMore(COMMA + var_decl) + RPAR
         procedure_decl << pp.Keyword("procedure").suppress() + ident + params + SEMI + vars_decl + body + SEMI
 
